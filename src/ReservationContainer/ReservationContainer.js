@@ -8,7 +8,7 @@ const ReservationContainer = ({ reservations, addReservation }) => {
 
   reservations.length > 0
     ? reservationsDisplay = reservations.map(res => (
-        <ReservationCard reservationInfo={res} />
+        <ReservationCard key={res.id} reservationInfo={res} />
       ))
     : reservationsDisplay = <p>No reservations to display.</p>;
 

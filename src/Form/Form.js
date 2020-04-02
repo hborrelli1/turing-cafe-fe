@@ -13,21 +13,22 @@ class Form extends React.Component {
   }
 
   handleChange = (event) => {
-    let value = event.target.name === 'number' ? parseInt(event.target.value) : event.target.value;
-    console.log(value);
-    console.log(typeof value);
-    this.setState({ [event.target.name]: value })
+    // let value = event.target.name === 'number' ? parseInt(event.target.value) : event.target.value;
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   handleClick = (event) => {
     event.preventDefault();
-    console.log('clicked');
     const newRes = {
       ...this.state,
       id: Date.now()
     }
-    console.log(newRes);
     this.props.addReservation(newRes);
+    this.clearForm();
+  }
+
+  clearForm = () => {
+    this.setState({ name: '', date: '', time: '', number: '' })
   }
 
   render () {
@@ -57,7 +58,7 @@ class Form extends React.Component {
         <input
           type='number'
           name='number'
-          value={this.state.numOfGuests}
+          value={this.state.number}
           placeholder='Number of Guests'
           onChange={this.handleChange}
         />
