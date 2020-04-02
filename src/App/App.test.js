@@ -7,3 +7,7 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+// describe('App Test', () => {
+//   it('should render the form and ideas to the page', (_))
+// });
