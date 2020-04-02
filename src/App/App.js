@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReservationContainer from '../ReservationContainer/ReservationContainer';
 import './App.css';
+import { fetchReservations } from '../ApiCalls/ApiCalls'
 
 class App extends Component {
   constructor() {
@@ -10,8 +11,9 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
-    fetchReservations();
+  componentDidMount = async () => {
+    let fetchedReservations = await fetchReservations();
+    this.setState({ reservations: fetchedReservations });
   }
 
   render() {

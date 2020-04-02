@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
+*,
+*:after,
+*:before {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 .App {
   display: flex;
   flex-direction: column;
