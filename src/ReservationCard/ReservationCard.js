@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './ReservationCard.css'
 
-const ReservationCard = ({ reservationInfo }) => {
+const ReservationCard = ({ reservationInfo, deleteReservation }) => {
   const {
     id,
     name,
@@ -17,6 +17,11 @@ const ReservationCard = ({ reservationInfo }) => {
       <p>{date}</p>
       <p>{time}</p>
       <p>Number of guests: {number}</p>
+      <button
+        onClick={() => deleteReservation(id)}
+      >
+        Delete Reservation
+      </button>
     </article>
   )
 }

@@ -14,3 +14,11 @@ export const postReservation = (reservation) => {
     .then(res => res.json())
     .catch(err => console.log(err.message))
 }
+
+export const deleteResevationRemote = (id) => {
+  return fetch(`http://localhost:3001/api/v1/reservations/${id}`, {
+    method: 'DELETE'
+  })
+    .then(res => res.json())
+    .catch(err => console.log(err.message))
+}
