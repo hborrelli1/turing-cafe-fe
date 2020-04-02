@@ -18,6 +18,7 @@ const ReservationCard = ({ reservationInfo, deleteReservation }) => {
       <p>{time}</p>
       <p>Number of guests: {number}</p>
       <button
+        aria-label={`delete-button-${id}`}
         onClick={() => deleteReservation(id)}
       >
         Delete Reservation
